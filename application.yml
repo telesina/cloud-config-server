@@ -1,8 +1,34 @@
 eureka:
   client:
-    register-with-eureka: true
     fetch-registry: true
+    register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
+
+jwt:
+  secret:
+    audiences:
+      - UserService
+      - PostService
+      - FeedService
+      - UserAchievementsService
+      - CommentModeratorService
+    token:
+        issuer: AuthService
+    commentModeratorService:
+      audience: CommentModeratorService
+      key: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoU2VydmljZSIsImF1ZCI6IkNvbW1lbnRNb2RlcmF0b3JTZXJ2aWNlIiwic3ViIjoiY29tbWVudC1tb2RlcmF0b3Itc2VydmljZSIsImV4cCI6MTY1NjQxODgzOCwiY2FuLXJlYWQiOnRydWUsImNhbi13cml0ZSI6dHJ1ZSwiY2FuLWVkaXQiOnRydWV9.HlnKwDE6pxSNQzbLnqf4mvwQpW0Fk3cyq-1dP9kLgTSx5-MxSzhi598QOmBQaRgVUuFGazLtbYdQKUPGmbmwZA
+    feedService:
+      audience: FeedService
+      key: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoU2VydmljZSIsImF1ZCI6IkZlZWRTZXJ2aWNlIiwic3ViIjoiZmVlZC1zZXJ2aWNlIiwiZXhwIjoxNjU2NDE4ODM4LCJjYW4tcmVhZCI6dHJ1ZSwiY2FuLXdyaXRlIjp0cnVlLCJjYW4tZWRpdCI6dHJ1ZX0.wSlj4Hor_XGc5QlodIc-ZJreeMouEvpybTrKiewWWz6ZapzjrSv8GPqcgjKZGgnR10_u7hxlGzz5L9kS7IDSvQ
+    postService:
+      audience: PostService
+      key: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoU2VydmljZSIsImF1ZCI6IlBvc3RTZXJ2aWNlIiwic3ViIjoicG9zdC1zZXJ2aWNlIiwiZXhwIjoxNjU2NDE4ODM4LCJjYW4tcmVhZCI6dHJ1ZSwiY2FuLXdyaXRlIjp0cnVlLCJjYW4tZWRpdCI6dHJ1ZX0.Vr0NxPdzS_RNrAxuJyOt0V4mCdFmxJtJ4fTSaCe5qzvVtNUBOpo_ECev2gvJKGH565memhblPBYG9HnMir6JQg
+    userAchievementsService:
+      audience: UserAchievementsService
+      key: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoU2VydmljZSIsImF1ZCI6IlVzZXJBY2hpZXZlbWVudHNTZXJ2aWNlIiwic3ViIjoidXNlci1hY2hpZXZlbWVudHMtc2VydmljZSIsImV4cCI6MTY1NjQxODgzOCwiY2FuLXJlYWQiOnRydWUsImNhbi13cml0ZSI6dHJ1ZSwiY2FuLWVkaXQiOnRydWV9.nxpB9R_83m4q68jzDl4PpKTyAqSYNkiOWl4WK5q70M16GCIskEJof6s8CflTeIUbDVJXVp5XnTrDdJskOgKjzA
+    userService:
+      audience: UserService
+      key: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJBdXRoU2VydmljZSIsImF1ZCI6IlVzZXJTZXJ2aWNlIiwic3ViIjoidXNlci1zZXJ2aWNlIiwiZXhwIjoxNjU2NDE4ODM4LCJjYW4tcmVhZCI6dHJ1ZSwiY2FuLXdyaXRlIjp0cnVlLCJjYW4tZWRpdCI6dHJ1ZX0.pga22cnTR_vwlghO6vIX9lj2qJBjg9WiaJRbIaHXFQ_Z0uaR3mHbcxrVZC96uNZDcxibFyXqN8VeqCMAMTUuTg
