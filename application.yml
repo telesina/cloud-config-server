@@ -9,12 +9,7 @@ eureka:
 
 jwt:
   secret:
-    audiences:
-      - UserService
-      - PostService
-      - FeedService
-      - UserAchievementsService
-      - CommentModeratorService
+    audiences: UserService, PostService, FeedService, UserAchievementsService, CommentModeratorService
     token:
         issuer: AuthService
     commentModeratorService:
