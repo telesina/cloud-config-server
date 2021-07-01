@@ -8,6 +8,10 @@ eureka:
     hostname: localhost
 
 jwt:
+  token:
+    secret: sup9rUltr4S3cr3tK3y
+    issuer: AuthService
+    audience: shmitter-services
   secret:
     audiences: UserService, PostService, FeedService, UserAchievementsService, CommentModeratorService
     token:
